@@ -1,0 +1,2669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="MayGAD - Quality liquid soap, detergents, floor cleaners, Parazone, spirit and household cleaning products.">
+
+    <meta name="theme-color" content="#0f766e">
+
+    <title>MayGAD | Quality Cleaning Products</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0f766e;
+            --primary-dark: #115e59;
+            --secondary: #14b8a6;
+            --accent: #f59e0b;
+            --dark: #102a2a;
+            --text: #334155;
+            --light: #f0fdfa;
+            --white: #ffffff;
+            --border: #dbe5e5;
+            --danger: #dc2626;
+            --shadow: 0 10px 30px rgba(15, 118, 110, 0.12);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f8fafc;
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        button,
+        input,
+        select,
+        textarea {
+            font: inherit;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255,255,255,0.96);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 25px;
+            font-weight: 900;
+            color: var(--primary);
+        }
+
+        .logo-icon {
+            width: 43px;
+            height: 43px;
+            border-radius: 13px;
+            display: grid;
+            place-items: center;
+            color: white;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            box-shadow: var(--shadow);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-weight: 600;
+            transition: .2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .cart-button {
+            border: none;
+            background: var(--primary);
+            color: white;
+            padding: 11px 17px;
+            border-radius: 12px;
+            font-weight: 700;
+            position: relative;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: var(--accent);
+            color: #111827;
+            width: 23px;
+            height: 23px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            font-size: 12px;
+            font-weight: 900;
+        }
+
+        .menu-btn {
+            display: none;
+            border: none;
+            background: transparent;
+            font-size: 27px;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 650px;
+            background:
+                radial-gradient(circle at 90% 20%, rgba(20,184,166,.25), transparent 30%),
+                radial-gradient(circle at 10% 90%, rgba(245,158,11,.15), transparent 25%),
+                linear-gradient(135deg, #ecfdf5, #f0fdfa 50%, #ffffff);
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 80px 20px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1.1fr .9fr;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 8px 14px;
+            background: #ccfbf1;
+            color: var(--primary-dark);
+            border-radius: 30px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 6vw, 75px);
+            line-height: 1.03;
+            color: var(--dark);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero p {
+            max-width: 650px;
+            font-size: 19px;
+            color: #52606d;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .btn {
+            border: none;
+            padding: 14px 22px;
+            border-radius: 12px;
+            font-weight: 800;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: .25s;
+        }
+
+        .btn-primary {
+            color: white;
+            background: var(--primary);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--light);
+        }
+
+        .hero-card {
+            background: rgba(255,255,255,.8);
+            border: 1px solid white;
+            border-radius: 30px;
+            padding: 30px;
+            box-shadow: 0 25px 70px rgba(15,118,110,.15);
+        }
+
+        .cleaning-illustration {
+            min-height: 370px;
+            border-radius: 25px;
+            background:
+                linear-gradient(145deg, #ccfbf1, #ffffff);
+            display: grid;
+            place-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cleaning-emoji {
+            font-size: 150px;
+            filter: drop-shadow(0 20px 20px rgba(0,0,0,.1));
+        }
+
+        .bubble {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(20,184,166,.18);
+        }
+
+        .bubble.one {
+            width: 80px;
+            height: 80px;
+            top: 25px;
+            left: 30px;
+        }
+
+        .bubble.two {
+            width: 50px;
+            height: 50px;
+            bottom: 30px;
+            right: 30px;
+        }
+
+        .bubble.three {
+            width: 30px;
+            height: 30px;
+            top: 80px;
+            right: 80px;
+        }
+
+        /* =========================
+           SECTION
+        ========================= */
+
+        section {
+            padding: 80px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-heading h2 {
+            font-size: 38px;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+
+        .section-heading p {
+            max-width: 650px;
+            margin: auto;
+            color: #64748b;
+        }
+
+        /* =========================
+           FEATURES
+        ========================= */
+
+        .features {
+            background: white;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .feature {
+            padding: 28px;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            background: white;
+            text-align: center;
+        }
+
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 12px;
+        }
+
+        .feature h3 {
+            color: var(--dark);
+            margin-bottom: 8px;
+        }
+
+        /* =========================
+           PRODUCTS
+        ========================= */
+
+        .products-section {
+            background: #f8fafc;
+        }
+
+        .product-tools {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        .search-box {
+            flex: 1;
+            min-width: 250px;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 14px 18px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            outline: none;
+            background: white;
+        }
+
+        .search-box input:focus {
+            border-color: var(--primary);
+        }
+
+        .categories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .category-btn {
+            border: 1px solid var(--border);
+            background: white;
+            padding: 11px 15px;
+            border-radius: 10px;
+            font-weight: 700;
+        }
+
+        .category-btn.active,
+        .category-btn:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: .25s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow);
+        }
+
+        .product-image {
+            height: 210px;
+            background: linear-gradient(145deg, #ecfdf5, #f8fafc);
+            display: grid;
+            place-items: center;
+            font-size: 85px;
+            position: relative;
+        }
+
+        .product-tag {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: var(--accent);
+            color: #111827;
+            padding: 5px 9px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 900;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-category {
+            color: var(--primary);
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        .product-info h3 {
+            color: var(--dark);
+            margin: 5px 0;
+            font-size: 19px;
+        }
+
+        .product-description {
+            color: #64748b;
+            font-size: 14px;
+            min-height: 45px;
+        }
+
+        .product-bottom {
+            margin-top: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .price {
+            font-weight: 900;
+            font-size: 19px;
+            color: var(--primary);
+        }
+
+        .add-btn {
+            border: none;
+            background: var(--primary);
+            color: white;
+            padding: 9px 12px;
+            border-radius: 9px;
+            font-weight: 800;
+        }
+
+        .add-btn:hover {
+            background: var(--primary-dark);
+        }
+
+        .empty-products {
+            text-align: center;
+            padding: 50px;
+            display: none;
+        }
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about {
+            background: white;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: .9fr 1.1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-visual {
+            min-height: 400px;
+            border-radius: 30px;
+            background: linear-gradient(145deg, var(--primary), var(--secondary));
+            display: grid;
+            place-items: center;
+            font-size: 130px;
+            box-shadow: var(--shadow);
+        }
+
+        .about-content h2 {
+            font-size: 42px;
+            color: var(--dark);
+            margin-bottom: 18px;
+        }
+
+        .about-content p {
+            margin-bottom: 18px;
+            color: #64748b;
+        }
+
+        .check-list {
+            list-style: none;
+            display: grid;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .check-list li {
+            display: flex;
+            gap: 10px;
+            font-weight: 700;
+        }
+
+        /* =========================
+           ORDER PROCESS
+        ========================= */
+
+        .how {
+            background: var(--light);
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .step {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            border: 1px solid var(--border);
+        }
+
+        .step-number {
+            width: 55px;
+            height: 55px;
+            margin: 0 auto 15px;
+            display: grid;
+            place-items: center;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            font-size: 20px;
+            font-weight: 900;
+        }
+
+        .step h3 {
+            color: var(--dark);
+            margin-bottom: 8px;
+        }
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact {
+            background: white;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .contact-card {
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 22px;
+        }
+
+        .contact-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 12px;
+            background: var(--light);
+            display: grid;
+            place-items: center;
+            font-size: 21px;
+        }
+
+        .contact-item h4 {
+            color: var(--dark);
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: var(--dark);
+            color: #cbd5e1;
+            padding: 45px 20px 25px;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        footer h3 {
+            color: white;
+            margin-bottom: 12px;
+        }
+
+        footer p {
+            color: #94a3b8;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 30px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid #334155;
+            text-align: center;
+            color: #94a3b8;
+        }
+
+        /* =========================
+           CART
+        ========================= */
+
+        .overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(15,23,42,.55);
+            z-index: 1999;
+            display: none;
+        }
+
+        .overlay.show {
+            display: block;
+        }
+
+        .cart-panel {
+            position: fixed;
+            right: -450px;
+            top: 0;
+            width: min(450px, 100%);
+            height: 100vh;
+            background: white;
+            z-index: 2000;
+            transition: .3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cart-panel.open {
+            right: 0;
+        }
+
+        .cart-header {
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .cart-header h2 {
+            color: var(--dark);
+        }
+
+        .close-btn {
+            border: none;
+            background: #f1f5f9;
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            font-size: 20px;
+        }
+
+        .cart-items {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        .cart-item {
+            display: grid;
+            grid-template-columns: 60px 1fr auto;
+            gap: 12px;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .cart-item-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            background: var(--light);
+            display: grid;
+            place-items: center;
+            font-size: 30px;
+        }
+
+        .cart-item h4 {
+            color: var(--dark);
+            font-size: 14px;
+        }
+
+        .cart-item-price {
+            color: var(--primary);
+            font-weight: 800;
+            font-size: 13px;
+        }
+
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 5px;
+        }
+
+        .quantity-controls button {
+            width: 25px;
+            height: 25px;
+            border: none;
+            background: #e2e8f0;
+            border-radius: 6px;
+            font-weight: 900;
+        }
+
+        .remove-item {
+            border: none;
+            background: transparent;
+            color: var(--danger);
+            font-size: 13px;
+        }
+
+        .cart-footer {
+            border-top: 1px solid var(--border);
+            padding: 20px;
+        }
+
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            font-size: 20px;
+            font-weight: 900;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+
+        .checkout-btn {
+            width: 100%;
+            border: none;
+            background: var(--primary);
+            color: white;
+            padding: 15px;
+            border-radius: 12px;
+            font-weight: 900;
+        }
+
+        .empty-cart {
+            text-align: center;
+            padding: 60px 20px;
+            color: #64748b;
+        }
+
+        .empty-cart-icon {
+            font-size: 60px;
+            margin-bottom: 15px;
+        }
+
+        /* =========================
+           CHECKOUT MODAL
+        ========================= */
+
+        .modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(15,23,42,.65);
+            z-index: 3000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .modal.show {
+            display: flex;
+        }
+
+        .modal-content {
+            width: min(650px, 100%);
+            max-height: 90vh;
+            overflow-y: auto;
+            background: white;
+            border-radius: 25px;
+            padding: 30px;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .modal-header h2 {
+            color: var(--dark);
+        }
+
+        .form-group {
+            margin-bottom: 17px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 7px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 13px 14px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            outline: none;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 90px;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary);
+        }
+
+        .order-summary {
+            background: var(--light);
+            border-radius: 15px;
+            padding: 18px;
+            margin: 20px 0;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 5px 0;
+            font-size: 14px;
+        }
+
+        .summary-total {
+            border-top: 1px solid #b7ded9;
+            margin-top: 10px;
+            padding-top: 10px;
+            font-weight: 900;
+            color: var(--dark);
+        }
+
+        .success-message {
+            text-align: center;
+            padding: 30px 10px;
+            display: none;
+        }
+
+        .success-icon {
+            font-size: 70px;
+            margin-bottom: 10px;
+        }
+
+        /* =========================
+           TOAST
+        ========================= */
+
+        .toast {
+            position: fixed;
+            left: 50%;
+            bottom: 25px;
+            transform: translate(-50%, 100px);
+            background: var(--dark);
+            color: white;
+            padding: 13px 20px;
+            border-radius: 12px;
+            z-index: 5000;
+            opacity: 0;
+            transition: .3s;
+            font-weight: 700;
+        }
+
+        .toast.show {
+            transform: translate(-50%, 0);
+            opacity: 1;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 950px) {
+            .hero-container,
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                min-height: auto;
+            }
+
+            .feature-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .product-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 720px) {
+            .nav-links {
+                position: absolute;
+                top: 73px;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 20px;
+                display: none;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .hero-container {
+                padding: 60px 20px;
+            }
+
+            .hero-card {
+                padding: 15px;
+            }
+
+            .cleaning-illustration {
+                min-height: 280px;
+            }
+
+            .cleaning-emoji {
+                font-size: 100px;
+            }
+
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .steps,
+            .contact-grid,
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-heading h2 {
+                font-size: 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .feature-grid,
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 43px;
+            }
+
+            .product-image {
+                height: 230px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<header class="navbar">
+    <div class="nav-container">
+
+        <a href="#home" class="logo">
+            <span class="logo-icon">🧼</span>
+            <span>MayGAD</span>
+        </a>
+
+        <nav>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#how">How to Order</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div style="display:flex;align-items:center;gap:10px;">
+            <button class="cart-button" onclick="openCart()">
+                🛒 Cart
+                <span class="cart-count" id="cartCount">0</span>
+            </button>
+
+            <button class="menu-btn" onclick="toggleMenu()">☰</button>
+        </div>
+
+    </div>
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-container">
+
+        <div>
+
+            <span class="badge">✨ Quality Cleaning Products</span>
+
+            <h1>
+                Clean Better.
+                <span>Live Better.</span>
+            </h1>
+
+            <p>
+                Welcome to MayGAD — your trusted source for quality
+                cleaning and household products for homes, offices,
+                schools, shops and businesses.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#products" class="btn btn-primary">
+                    🛍️ Shop Products
+                </a>
+
+                <a href="#contact" class="btn btn-secondary">
+                    📞 Contact Us
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="hero-card">
+
+            <div class="cleaning-illustration">
+
+                <div class="bubble one"></div>
+                <div class="bubble two"></div>
+                <div class="bubble three"></div>
+
+                <div>
+                    <div class="cleaning-emoji">🧴</div>
+                    <h2 style="color:#0f766e;">MayGAD</h2>
+                    <p>Clean • Fresh • Trusted</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FEATURES
+========================= -->
+
+<section class="features">
+
+    <div class="container">
+
+        <div class="feature-grid">
+
+            <div class="feature">
+                <div class="feature-icon">✨</div>
+                <h3>Quality Products</h3>
+                <p>Reliable cleaning products for everyday use.</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">💰</div>
+                <h3>Great Prices</h3>
+                <p>Affordable products for homes and businesses.</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">📦</div>
+                <h3>Easy Ordering</h3>
+                <p>Add products to your cart and place your order.</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">📲</div>
+                <h3>WhatsApp Orders</h3>
+                <p>Send your order directly to MayGAD.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PRODUCTS
+========================= -->
+
+<section class="products-section" id="products">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <h2>Our Products</h2>
+
+            <p>
+                Choose from our range of cleaning and household
+                products.
+            </p>
+
+        </div>
+
+        <div class="product-tools">
+
+            <div class="search-box">
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="🔎 Search products..."
+                    oninput="searchProducts()"
+                >
+            </div>
+
+            <div class="categories">
+
+                <button
+                    class="category-btn active"
+                    onclick="filterCategory('All', this)">
+                    All
+                </button>
+
+                <button
+                    class="category-btn"
+                    onclick="filterCategory('Liquid Soap', this)">
+                    Liquid Soap
+                </button>
+
+                <button
+                    class="category-btn"
+                    onclick="filterCategory('Floor Care', this)">
+                    Floor Care
+                </button>
+
+                <button
+                    class="category-btn"
+                    onclick="filterCategory('Laundry', this)">
+                    Laundry
+                </button>
+
+                <button
+                    class="category-btn"
+                    onclick="filterCategory('Disinfectant', this)">
+                    Disinfectant
+                </button>
+
+                <button
+                    class="category-btn"
+                    onclick="filterCategory('Other', this)">
+                    Other
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="product-grid" id="productGrid"></div>
+
+        <div class="empty-products" id="emptyProducts">
+
+            <div style="font-size:50px;">🔎</div>
+
+            <h3>No products found</h3>
+
+            <p>
+                Try another search or category.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section class="about" id="about">
+
+    <div class="container">
+
+        <div class="about-grid">
+
+            <div class="about-visual">
+                🧼
+            </div>
+
+            <div class="about-content">
+
+                <span class="badge">About MayGAD</span>
+
+                <h2>
+                    Making Clean Living Easier
+                </h2>
+
+                <p>
+                    MayGAD provides cleaning and household products
+                    designed to help customers keep their homes,
+                    workplaces and surroundings clean and fresh.
+                </p>
+
+                <p>
+                    Whether you need products for your home,
+                    office, school, shop or business, MayGAD makes
+                    ordering simple and convenient.
+                </p>
+
+                <ul class="check-list">
+
+                    <li>
+                        <span>✅</span>
+                        Quality cleaning products
+                    </li>
+
+                    <li>
+                        <span>✅</span>
+                        Convenient ordering
+                    </li>
+
+                    <li>
+                        <span>✅</span>
+                        Products for homes and businesses
+                    </li>
+
+                    <li>
+                        <span>✅</span>
+                        Friendly customer service
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     HOW TO ORDER
+========================= -->
+
+<section class="how" id="how">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <h2>How to Order</h2>
+
+            <p>
+                Getting your cleaning products from MayGAD is simple.
+            </p>
+
+        </div>
+
+        <div class="steps">
+
+            <div class="step">
+
+                <div class="step-number">1</div>
+
+                <h3>Choose Products</h3>
+
+                <p>
+                    Browse our products and add what you need to
+                    your shopping cart.
+                </p>
+
+            </div>
+
+            <div class="step">
+
+                <div class="step-number">2</div>
+
+                <h3>Checkout</h3>
+
+                <p>
+                    Enter your name, phone number and delivery
+                    information.
+                </p>
+
+            </div>
+
+            <div class="step">
+
+                <div class="step-number">3</div>
+
+                <h3>Confirm Order</h3>
+
+                <p>
+                    Send your order to MayGAD through WhatsApp
+                    and wait for confirmation.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section class="contact" id="contact">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <h2>Contact MayGAD</h2>
+
+            <p>
+                Have a question or need a bulk order? Get in touch.
+            </p>
+
+        </div>
+
+        <div class="contact-grid">
+
+            <div class="contact-card">
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">📲</div>
+
+                    <div>
+                        <h4>WhatsApp</h4>
+                        <p id="contactWhatsApp">
+                            +233 XX XXX XXXX
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">📞</div>
+
+                    <div>
+                        <h4>Phone</h4>
+                        <p>Call MayGAD for enquiries and orders.</p>
+                    </div>
+
+                </div>
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">📦</div>
+
+                    <div>
+                        <h4>Bulk Orders</h4>
+                        <p>
+                            Contact us for larger quantities and
+                            business orders.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="contact-card">
+
+                <h3 style="color:#102a2a;margin-bottom:10px;">
+                    Ready to order?
+                </h3>
+
+                <p style="margin-bottom:20px;">
+                    Browse our products and build your order.
+                </p>
+
+                <a
+                    href="#products"
+                    class="btn btn-primary"
+                    style="width:100%;">
+                    🛒 Start Shopping
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="footer-grid">
+
+        <div>
+
+            <h3>🧼 MayGAD</h3>
+
+            <p>
+                Quality cleaning products for a cleaner,
+                fresher environment.
+            </p>
+
+        </div>
+
+        <div>
+
+            <h3>Quick Links</h3>
+
+            <p><a href="#home">Home</a></p>
+            <p><a href="#products">Products</a></p>
+            <p><a href="#about">About</a></p>
+            <p><a href="#contact">Contact</a></p>
+
+        </div>
+
+        <div>
+
+            <h3>Products</h3>
+
+            <p>Liquid Soap</p>
+            <p>Floor Cleaner</p>
+            <p>Parazone</p>
+            <p>Detergent</p>
+            <p>Spirit</p>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+        ©️ <span id="year"></span> MayGAD.
+        All rights reserved.
+
+    </div>
+
+</footer>
+
+
+<!-- =========================
+     CART
+========================= -->
+
+<div
+    class="overlay"
+    id="overlay"
+    onclick="closeCart()">
+</div>
+
+<aside class="cart-panel" id="cartPanel">
+
+    <div class="cart-header">
+
+        <h2>🛒 Your Cart</h2>
+
+        <button
+            class="close-btn"
+            onclick="closeCart()">
+            ✕
+        </button>
+
+    </div>
+
+    <div class="cart-items" id="cartItems"></div>
+
+    <div class="cart-footer">
+
+        <div class="cart-total">
+
+            <span>Total</span>
+
+            <span id="cartTotal">
+                GH₵0.00
+            </span>
+
+        </div>
+
+        <button
+            class="checkout-btn"
+            onclick="openCheckout()">
+            Proceed to Checkout
+        </button>
+
+    </div>
+
+</aside>
+
+
+<!-- =========================
+     CHECKOUT MODAL
+========================= -->
+
+<div class="modal" id="checkoutModal">
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+
+            <h2>📦 Place Your Order</h2>
+
+            <button
+                class="close-btn"
+                onclick="closeCheckout()">
+                ✕
+            </button>
+
+        </div>
+
+        <form id="checkoutForm">
+
+            <div class="form-group">
+
+                <label for="customerName">
+                    Full Name *
+                </label>
+
+                <input
+                    id="customerName"
+                    type="text"
+                    placeholder="Enter your full name"
+                    required>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="customerPhone">
+                    Phone / WhatsApp *
+                </label>
+
+                <input
+                    id="customerPhone"
+                    type="tel"
+                    placeholder="e.g. 0241234567"
+                    required>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="deliveryLocation">
+                    Delivery Location *
+                </label>
+
+                <input
+                    id="deliveryLocation"
+                    type="text"
+                    placeholder="Enter your location"
+                    required>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="paymentMethod">
+                    Preferred Payment Method
+                </label>
+
+                <select id="paymentMethod">
+
+                    <option value="Cash on Delivery">
+                        Cash on Delivery
+                    </option>
+
+                    <option value="MTN MoMo">
+                        MTN MoMo
+                    </option>
+
+                    <option value="Telecel Cash">
+                        Telecel Cash
+                    </option>
+
+                    <option value="AirtelTigo Money">
+                        AirtelTigo Money
+                    </option>
+
+                    <option value="Card">
+                        Card
+                    </option>
+
+                </select>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="notes">
+                    Additional Notes
+                </label>
+
+                <textarea
+                    id="notes"
+                    placeholder="Any special instructions?"></textarea>
+
+            </div>
+
+            <div class="order-summary">
+
+                <h3 style="color:#102a2a;margin-bottom:10px;">
+                    Order Summary
+                </h3>
+
+                <div id="checkoutSummary"></div>
+
+                <div class="summary-row summary-total">
+
+                    <span>Total</span>
+
+                    <span id="checkoutTotal">
+                        GH₵0.00
+                    </span>
+
+                </div>
+
+            </div>
+
+            <button
+                type="submit"
+                class="checkout-btn">
+                📲 Send Order on WhatsApp
+            </button>
+
+        </form>
+
+
+        <div class="success-message" id="successMessage">
+
+            <div class="success-icon">✅</div>
+
+            <h2 style="color:#102a2a;">
+                Order Prepared!
+            </h2>
+
+            <p style="margin:10px 0 20px;">
+                Your order has been prepared for WhatsApp.
+            </p>
+
+            <button
+                class="btn btn-primary"
+                onclick="closeCheckout()">
+                Continue Shopping
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     TOAST
+========================= -->
+
+<div class="toast" id="toast"></div>
+
+
+<script>
+
+    /* =====================================================
+       MAYGAD SETTINGS
+       CHANGE THESE VALUES
+    ===================================================== */
+
+    const MAYGAD_WHATSAPP = "233XXXXXXXXX";
+
+    /*
+       IMPORTANT:
+       Replace 233XXXXXXXXX above with the actual MayGAD
+       WhatsApp number.
+
+       Example:
+       const MAYGAD_WHATSAPP = "233241234567";
+    */
+
+
+    /* =====================================================
+       PRODUCTS
+    ===================================================== */
+
+    const products = [
+
+        {
+            id: 1,
+            name: "MayGAD Liquid Soap",
+            category: "Liquid Soap",
+            price: 25,
+            emoji: "🧴",
+            description: "Quality liquid soap for everyday cleaning.",
+            tag: "Popular"
+        },
+
+        {
+            id: 2,
+            name: "MayGAD Liquid Soap 5L",
+            category: "Liquid Soap",
+            price: 75,
+            emoji: "🧴",
+            description: "Large-size liquid soap for homes and businesses.",
+            tag: "Best Value"
+        },
+
+        {
+            id: 3,
+            name: "Floor Cleaner",
+            category: "Floor Care",
+            price: 30,
+            emoji: "🧹",
+            description: "Helps keep floors clean and fresh.",
+            tag: "Popular"
+        },
+
+        {
+            id: 4,
+            name: "Parazone",
+            category: "Disinfectant",
+            price: 28,
+            emoji: "🧪",
+            description: "Cleaning and disinfecting product.",
+            tag: "Popular"
+        },
+
+        {
+            id: 5,
+            name: "Laundry Detergent",
+            category: "Laundry",
+            price: 35,
+            emoji: "🫧",
+            description: "Suitable for everyday laundry cleaning.",
+            tag: ""
+        },
+
+        {
+            id: 6,
+            name: "Spirit",
+            category: "Other",
+            price: 20,
+            emoji: "🧴",
+            description: "Multipurpose household cleaning product.",
+            tag: ""
+        },
+
+        {
+            id: 7,
+            name: "Dishwashing Liquid",
+            category: "Liquid Soap",
+            price: 25,
+            emoji: "🍽️",
+            description: "Designed for cleaning dishes and kitchenware.",
+            tag: "Popular"
+        },
+
+        {
+            id: 8,
+            name: "Toilet Cleaner",
+            category: "Disinfectant",
+            price: 30,
+            emoji: "🚽",
+            description: "For regular toilet and bathroom cleaning.",
+            tag: ""
+        },
+
+        {
+            id: 9,
+            name: "Bleach",
+            category: "Disinfectant",
+            price: 22,
+            emoji: "🧪",
+            description: "Household cleaning and disinfecting solution.",
+            tag: ""
+        },
+
+        {
+            id: 10,
+            name: "Multi-Purpose Cleaner",
+            category: "Other",
+            price: 27,
+            emoji: "✨",
+            description: "Versatile cleaner for different surfaces.",
+            tag: "New"
+        },
+
+        {
+            id: 11,
+            name: "Washing Powder",
+            category: "Laundry",
+            price: 40,
+            emoji: "🫧",
+            description: "Laundry detergent for everyday washing.",
+            tag: ""
+        },
+
+        {
+            id: 12,
+            name: "Disinfectant",
+            category: "Disinfectant",
+            price: 35,
+            emoji: "🧼",
+            description: "Helps maintain a clean environment.",
+            tag: "Popular"
+        }
+
+    ];
+
+
+    /* =====================================================
+       VARIABLES
+    ===================================================== */
+
+    let cart = JSON.parse(
+        localStorage.getItem("maygadCart") || "[]"
+    );
+
+    let selectedCategory = "All";
+
+
+    /* =====================================================
+       INITIALIZATION
+    ===================================================== */
+
+    document.addEventListener("DOMContentLoaded", () => {
+
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+
+        renderProducts();
+
+        updateCart();
+
+    });
+
+
+    /* =====================================================
+       RENDER PRODUCTS
+    ===================================================== */
+
+    function renderProducts() {
+
+        const grid =
+            document.getElementById("productGrid");
+
+        const empty =
+            document.getElementById("emptyProducts");
+
+        const search =
+            document.getElementById("searchInput")
+                .value
+                .toLowerCase()
+                .trim();
+
+        let filtered = products.filter(product => {
+
+            const categoryMatch =
+                selectedCategory === "All" ||
+                product.category === selectedCategory;
+
+            const searchMatch =
+                product.name.toLowerCase().includes(search) ||
+                product.category.toLowerCase().includes(search) ||
+                product.description.toLowerCase().includes(search);
+
+            return categoryMatch && searchMatch;
+
+        });
+
+
+        grid.innerHTML = "";
+
+
+        if (filtered.length === 0) {
+
+            empty.style.display = "block";
+
+            return;
+
+        }
+
+        empty.style.display = "none";
+
+
+        filtered.forEach(product => {
+
+            const card =
+                document.createElement("article");
+
+            card.className = "product-card";
+
+            card.innerHTML = `
+
+                <div class="product-image">
+
+                    ${
+                        product.tag
+                        ?
+                        `<span class="product-tag">
+                            ${product.tag}
+                        </span>`
+                        :
+                        ""
+                    }
+
+                    <span>${product.emoji}</span>
+
+                </div>
+
+                <div class="product-info">
+
+                    <span class="product-category">
+                        ${product.category}
+                    </span>
+
+                    <h3>
+                        ${product.name}
+                    </h3>
+
+                    <p class="product-description">
+                        ${product.description}
+                    </p>
+
+                    <div class="product-bottom">
+
+                        <span class="price">
+                            GH₵${product.price.toFixed(2)}
+                        </span>
+
+                        <button
+                            class="add-btn"
+                            onclick="addToCart(${product.id})">
+                            + Add
+                        </button>
+
+                    </div>
+
+                </div>
+
+            `;
+
+            grid.appendChild(card);
+
+        });
+
+    }
+
+
+    /* =====================================================
+       SEARCH
+    ===================================================== */
+
+    function searchProducts() {
+        renderProducts();
+    }
+
+
+    /* =====================================================
+       CATEGORY FILTER
+    ===================================================== */
+
+    function filterCategory(category, button) {
+
+        selectedCategory = category;
+
+        document
+            .querySelectorAll(".category-btn")
+            .forEach(btn => {
+                btn.classList.remove("active");
+            });
+
+        button.classList.add("active");
+
+        renderProducts();
+
+    }
+
+
+    /* =====================================================
+       ADD TO CART
+    ===================================================== */
+
+    function addToCart(productId) {
+
+        const product =
+            products.find(p => p.id === productId);
+
+        if (!product) return;
+
+
+        const existing =
+            cart.find(item => item.id === productId);
+
+
+        if (existing) {
+
+            existing.quantity++;
+
+        } else {
+
+            cart.push({
+                id: product.id,
+                quantity: 1
+            });
+
+        }
+
+
+        saveCart();
+
+        updateCart();
+
+        showToast(
+            `${product.name} added to cart`
+        );
+
+    }
+
+
+    /* =====================================================
+       UPDATE CART
+    ===================================================== */
+
+    function updateCart() {
+
+        const countElement =
+            document.getElementById("cartCount");
+
+        const itemsElement =
+            document.getElementById("cartItems");
+
+        const totalElement =
+            document.getElementById("cartTotal");
+
+
+        const totalQuantity =
+            cart.reduce(
+                (sum, item) =>
+                    sum + item.quantity,
+                0
+            );
+
+
+        countElement.textContent =
+            totalQuantity;
+
+
+        if (cart.length === 0) {
+
+            itemsElement.innerHTML = `
+
+                <div class="empty-cart">
+
+                    <div class="empty-cart-icon">
+                        🛒
+                    </div>
+
+                    <h3>Your cart is empty</h3>
+
+                    <p>
+                        Add some MayGAD products to get started.
+                    </p>
+
+                </div>
+
+            `;
+
+            totalElement.textContent =
+                "GH₵0.00";
+
+            return;
+
+        }
+
+
+        itemsElement.innerHTML = "";
+
+
+        cart.forEach(item => {
+
+            const product =
+                products.find(p => p.id === item.id);
+
+            if (!product) return;
+
+
+            const itemTotal =
+                product.price * item.quantity;
+
+
+            const element =
+                document.createElement("div");
+
+            element.className = "cart-item";
+
+            element.innerHTML = `
+
+                <div class="cart-item-image">
+                    ${product.emoji}
+                </div>
+
+                <div>
+
+                    <h4>
+                        ${product.name}
+                    </h4>
+
+                    <div class="cart-item-price">
+                        GH₵${itemTotal.toFixed(2)}
+                    </div>
+
+                    <div class="quantity-controls">
+
+                        <button
+                            onclick="changeQuantity(${product.id}, -1)">
+                            −
+                        </button>
+
+                        <strong>
+                            ${item.quantity}
+                        </strong>
+
+                        <button
+                            onclick="changeQuantity(${product.id}, 1)">
+                            +
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <button
+                    class="remove-item"
+                    onclick="removeFromCart(${product.id})">
+                    Remove
+                </button>
+
+            `;
+
+            itemsElement.appendChild(element);
+
+        });
+
+
+        totalElement.textContent =
+            `GH₵${calculateTotal().toFixed(2)}`;
+
+    }
+
+
+    /* =====================================================
+       CHANGE QUANTITY
+    ===================================================== */
+
+    function changeQuantity(productId, change) {
+
+        const item =
+            cart.find(i => i.id === productId);
+
+        if (!item) return;
+
+
+        item.quantity += change;
+
+
+        if (item.quantity <= 0) {
+
+            cart =
+                cart.filter(i => i.id !== productId);
+
+        }
+
+
+        saveCart();
+
+        updateCart();
+
+    }
+
+
+    /* =====================================================
+       REMOVE FROM CART
+    ===================================================== */
+
+    function removeFromCart(productId) {
+
+        cart =
+            cart.filter(item => item.id !== productId);
+
+        saveCart();
+
+        updateCart();
+
+    }
+
+
+    /* =====================================================
+       CALCULATE TOTAL
+    ===================================================== */
+
+    function calculateTotal() {
+
+        return cart.reduce((total, item) => {
+
+            const product =
+                products.find(p => p.id === item.id);
+
+            if (!product) return total;
+
+            return total +
+                product.price * item.quantity;
+
+        }, 0);
+
+    }
+
+
+    /* =====================================================
+       SAVE CART
+    ===================================================== */
+
+    function saveCart() {
+
+        localStorage.setItem(
+            "maygadCart",
+            JSON.stringify(cart)
+        );
+
+    }
+
+
+    /* =====================================================
+       OPEN CART
+    ===================================================== */
+
+    function openCart() {
+
+        document
+            .getElementById("cartPanel")
+            .classList.add("open");
+
+        document
+            .getElementById("overlay")
+            .classList.add("show");
+
+    }
+
+
+    /* =====================================================
+       CLOSE CART
+    ===================================================== */
+
+    function closeCart() {
+
+        document
+            .getElementById("cartPanel")
+            .classList.remove("open");
+
+        document
+            .getElementById("overlay")
+            .classList.remove("show");
+
+    }
+
+
+    /* =====================================================
+       CHECKOUT
+    ===================================================== */
+
+    function openCheckout() {
+
+        if (cart.length === 0) {
+
+            showToast(
+                "Your cart is empty."
+            );
+
+            return;
+
+        }
+
+
+        closeCart();
+
+        renderCheckoutSummary();
+
+
+        document
+            .getElementById("checkoutModal")
+            .classList.add("show");
+
+    }
+
+
+    function closeCheckout() {
+
+        document
+            .getElementById("checkoutModal")
+            .classList.remove("show");
+
+        document
+            .getElementById("checkoutForm")
+            .style.display = "block";
+
+        document
+            .getElementById("successMessage")
+            .style.display = "none";
+
+    }
+
+
+    /* =====================================================
+       CHECKOUT SUMMARY
+    ===================================================== */
+
+    function renderCheckoutSummary() {
+
+        const summary =
+            document.getElementById(
+                "checkoutSummary"
+            );
+
+        const total =
+            document.getElementById(
+                "checkoutTotal"
+            );
+
+
+        summary.innerHTML = "";
+
+
+        cart.forEach(item => {
+
+            const product =
+                products.find(p => p.id === item.id);
+
+            if (!product) return;
+
+
+            const row =
+                document.createElement("div");
+
+            row.className = "summary-row";
+
+            row.innerHTML = `
+
+                <span>
+                    ${product.name}
+                    × ${item.quantity}
+                </span>
+
+                <strong>
+                    GH₵${(
+                        product.price *
+                        item.quantity
+                    ).toFixed(2)}
+                </strong>
+
+            `;
+
+            summary.appendChild(row);
+
+        });
+
+
+        total.textContent =
+            `GH₵${calculateTotal().toFixed(2)}`;
+
+    }
+
+
+    /* =====================================================
+       SUBMIT ORDER
+    ===================================================== */
+
+    document
+        .getElementById("checkoutForm")
+        .addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+
+            const name =
+                document
+                    .getElementById("customerName")
+                    .value
+                    .trim();
+
+
+            const phone =
+                document
+                    .getElementById("customerPhone")
+                    .value
+                    .trim();
+
+
+            const location =
+                document
+                    .getElementById("deliveryLocation")
+                    .value
+                    .trim();
+
+
+            const payment =
+                document
+                    .getElementById("paymentMethod")
+                    .value;
+
+
+            const notes =
+                document
+                    .getElementById("notes")
+                    .value
+                    .trim();
+
+
+            let message =
+                `*NEW MAYGAD ORDER*%0A%0A`;
+
+
+            message +=
+                `*Customer:* ${name}%0A`;
+
+            message +=
+                `*Phone:* ${phone}%0A`;
+
+            message +=
+                `*Location:* ${location}%0A`;
+
+            message +=
+                `*Payment:* ${payment}%0A%0A`;
+
+
+            message +=
+                `*ORDER ITEMS*%0A`;
+
+
+            cart.forEach(item => {
+
+                const product =
+                    products.find(
+                        p => p.id === item.id
+                    );
+
+                if (!product) return;
+
+
+                const itemTotal =
+                    product.price *
+                    item.quantity;
+
+
+                message +=
+                    `• ${product.name} × ${item.quantity} — GH₵${itemTotal.toFixed(2)}%0A`;
+
+            });
+
+
+            message +=
+                `%0A*TOTAL: GH₵${calculateTotal().toFixed(2)}*`;
+
+
+            if (notes) {
+
+                message +=
+                    `%0A%0A*Notes:* ${notes}`;
+
+            }
+
+
+            const whatsappURL =
+                `https://wa.me/${MAYGAD_WHATSAPP}?text=${message}`;
+
+
+            window.open(
+                whatsappURL,
+                "_blank"
+            );
+
+
+            document
+                .getElementById("checkoutForm")
+                .style.display = "none";
+
+
+            document
+                .getElementById("successMessage")
+                .style.display = "block";
+
+
+            cart = [];
+
+            saveCart();
+
+            updateCart();
+
+        });
+
+
+    /* =====================================================
+       MOBILE MENU
+    ===================================================== */
+
+    function toggleMenu() {
+
+        document
+            .getElementById("navLinks")
+            .classList.toggle("open");
+
+    }
+
+
+    document
+        .querySelectorAll(".nav-links a")
+        .forEach(link => {
+
+            link.addEventListener(
+                "click",
+                () => {
+
+                    document
+                        .getElementById("navLinks")
+                        .classList.remove("open");
+
+                }
+            );
+
+        });
+
+
+    /* =====================================================
+       TOAST
+    ===================================================== */
+
+    let toastTimer;
+
+
+    function showToast(message) {
+
+        const toast =
+            document.getElementById("toast");
+
+
+        toast.textContent = message;
+
+        toast.classList.add("show");
+
+
+        clearTimeout(toastTimer);
+
+
+        toastTimer =
+            setTimeout(() => {
+
+                toast.classList.remove("show");
+
+            }, 2500);
+
+    }
+
+</script>
+
+</body>
+</html>
